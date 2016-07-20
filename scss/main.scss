@@ -1,3 +1,33 @@
-.mainDiv {
-  margin:auto;
+
+/*$backgroundColor: rgba(0,50,200,1);*/
+$backgroundColor: rgba(100,100,100,0.5);
+/*$fontColor: white;*/
+$fontColor: $backgroundColor;
+$workColor: rgba(95, 213, 104, 1);
+$breakColor: rgba(87, 200, 209,1);
+@import "stopwatch.scss";
+html {
+  background-color: $backgroundColor;
+  color:$fontColor;
+  /*background-image: url(http://www.publicdomainpictures.net/pictures/30000/velka/wooden-background.jpg);*/
+  /*background-image: url(https://static.pexels.com/photos/82256/pexels-photo-82256.jpeg);*/
+  background-size: cover;
+  background-position: center center;
 }
+body {
+  background-color:transparent;
+  text-align: center;
+}
+.clickable {
+  cursor: pointer;
+}
+.mainDiv {
+  /*display:inline-block;*/
+  /*margin:400px auto;*/
+  margin-top: 50px;
+}
+/*.subDiv {
+  padding:20px;
+  margin:auto;
+  background-color:red;
+}*/

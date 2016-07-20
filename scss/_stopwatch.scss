@@ -1,0 +1,177 @@
+
+
+/*$borderColor: black;*/
+/*$borderColor: rgba(180,50,50,1);*/
+/*$borderColor: rgba(68,195,64,1);*/
+/*$workBorderColor: rgba(95, 213, 104, 1);*/
+$workBorderColor: $workColor;
+$borderColor: $workBorderColor;
+/*$breakBorderColor: rgba(87, 200, 209,1);*/
+$breakBorderColor: $breakColor;
+/*$borderColor: $backgroundColor;*/
+$borderBackgroundColor: lightgrey;
+/*$borderBackgroundColor: $fontColor;*/
+/*$pomodoroFontColor : rgba(100,100,100,0.5);*/
+$pomodoroFontColor :$backgroundColor;
+$countdownColor: $pomodoroFontColor;
+$controlsColor: $countdownColor;
+
+
+$borderRadius: 200px;
+$centerRadius: 1px;
+/*$containerBorderRadius:5px;*/
+$containerBorderRadius:0px;
+/*$centerRadius: 0px;*/
+/*$radius: 141px;*/
+$radius: $borderRadius + $centerRadius;
+$diameter: 2*$radius;
+.stopWatch {
+  &, & * {
+    box-sizing: content-box;
+    padding: 0;
+  }
+  &.breakBorderColor {
+    border-color: $breakBorderColor;
+  }
+  position:relative;
+  /*  width: 242px;
+    height: 242px;*/
+  /*  width: (-2*$containerBorderRadius) + $diameter;
+    height: (-2*$containerBorderRadius) + $diameter;*/
+  /*  width: ($containerBorderRadius) + $diameter;
+    height: ($containerBorderRadius) + $diameter;*/
+  width: $diameter;
+  height: $diameter;
+  border: $containerBorderRadius solid $borderColor;
+  /*background-color:blue;*/
+  border-radius:50%;
+  margin:auto;
+  .marker, .hidder, .marker2 {
+    position:absolute;
+    top:0;
+    left:0;
+    /*    top:$containerBorderRadius;
+        left:$containerBorderRadius;*/
+    width: $centerRadius;
+    height: $centerRadius;
+    /*    width: 0px;
+        height: 0px;*/
+    background-color: transparent;
+    border: $borderRadius solid transparent;
+    /*border-color:*/ 
+    border-radius:50%;
+    transform: rotate(-45deg); 
+/*    &.mark-top {
+      border-top-color: $borderColor;
+    }
+    &.mark-left {
+      border-left-color: $borderColor;
+    }
+    &.mark-bottom {
+      border-bottom-color: $borderColor;
+    }
+    &.mark-right {
+      border-right-color: $borderColor;
+    }*/
+    &.mark-top {
+      border-top-color: inherit;
+    }
+    &.mark-left {
+      border-left-color: inherit;
+    }
+    &.mark-bottom {
+      border-bottom-color: inherit;
+    }
+    &.mark-right {
+      border-right-color: inherit;
+    }
+  }
+  .marker {
+    border-color: $borderBackgroundColor;
+    /*border-top-color: $borderColor;*/
+    /*border-top-color: inherit;*/
+    /*transform: rotate(-45deg);*/ 
+  }
+  /*  #marker2 {
+      transform: rotate(-45deg); 
+    }*/
+  .hidder {
+    border-top-color: $borderBackgroundColor;
+    transform: rotate(-45deg); 
+    /*        &.show-top {
+              border-top-color: $borderColor;
+            }*/
+  }
+  .countdown {
+    position:absolute;
+    top:0;
+    left:0;
+    width: $diameter;
+    height: $diameter;
+    line-height: $diameter;
+    font-size: 4em;
+    /*color: grey;*/
+    /*color: rgba(100,100,100,0.5);*/
+    color: $countdownColor;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .controls {
+    @extend .countdown;
+    /*color: black;*/
+    $pad:10px;
+    padding: ($pad + 6px) 0 ($pad - 6px) 0;
+    color: $controlsColor;
+    line-height: ($diameter -(2*$pad))/3;
+  }
+}
+span.glyphicon, i {
+  cursor: pointer;
+}
+i#notification {
+  font-size: inherit;
+}
+
+.inputWrapper {
+  &.breakDiv {
+    background-color: $breakColor
+  }
+  &.workDiv {
+    background-color: $workColor
+  }
+  display: inline-block;
+  text-align: center;
+  border-radius:50%;
+  $lineHeight:20px;
+  $pad:5px;
+  $totHeight:(3*$lineHeight) +(2*$pad) ;
+  /*padding: $pad 0;*/
+  padding: $pad;
+  width:$totHeight;
+  height:$totHeight;
+  line-height: $lineHeight;
+  font-size: $lineHeight;
+  font-color:inherit;
+  margin:auto;
+  /*margin: 10px auto (0px - 40px) auto;*/
+  /*margin: 0 100px -40px 100px;*/
+  label {
+    input {
+      text-align: center;
+      width:90%;
+      height: $lineHeight;
+      line-height: $lineHeight;
+      background-color:inherit;
+      /*border: 1px solid white;*/
+      border: none;
+    }
+  }
+}
+
+input[type=number].noControl {
+  -moz-appearance: textfield;
+  &::-webkit-inner-spin-button,&::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+} 

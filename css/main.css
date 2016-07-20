@@ -1,4 +1,166 @@
+/*$backgroundColor: rgba(0,50,200,1);*/
+/*$fontColor: white;*/
+/*$borderColor: black;*/
+/*$borderColor: rgba(180,50,50,1);*/
+/*$borderColor: rgba(68,195,64,1);*/
+/*$workBorderColor: rgba(95, 213, 104, 1);*/
+/*$breakBorderColor: rgba(87, 200, 209,1);*/
+/*$borderColor: $backgroundColor;*/
+/*$borderBackgroundColor: $fontColor;*/
+/*$pomodoroFontColor : rgba(100,100,100,0.5);*/
+/*$containerBorderRadius:5px;*/
+/*$centerRadius: 0px;*/
+/*$radius: 141px;*/
+.stopWatch {
+  position: relative;
+  /*  width: 242px;
+    height: 242px;*/
+  /*  width: (-2*$containerBorderRadius) + $diameter;
+    height: (-2*$containerBorderRadius) + $diameter;*/
+  /*  width: ($containerBorderRadius) + $diameter;
+    height: ($containerBorderRadius) + $diameter;*/
+  width: 402px;
+  height: 402px;
+  border: 0px solid #5fd568;
+  /*background-color:blue;*/
+  border-radius: 50%;
+  margin: auto;
+  /*  #marker2 {
+      transform: rotate(-45deg); 
+    }*/ }
+  .stopWatch, .stopWatch * {
+    box-sizing: content-box;
+    padding: 0; }
+  .stopWatch.breakBorderColor {
+    border-color: #57c8d1; }
+  .stopWatch .marker, .stopWatch .hidder, .stopWatch .marker2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*    top:$containerBorderRadius;
+        left:$containerBorderRadius;*/
+    width: 1px;
+    height: 1px;
+    /*    width: 0px;
+        height: 0px;*/
+    background-color: transparent;
+    border: 200px solid transparent;
+    /*border-color:*/
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    /*    &.mark-top {
+          border-top-color: $borderColor;
+        }
+        &.mark-left {
+          border-left-color: $borderColor;
+        }
+        &.mark-bottom {
+          border-bottom-color: $borderColor;
+        }
+        &.mark-right {
+          border-right-color: $borderColor;
+        }*/ }
+    .stopWatch .marker.mark-top, .stopWatch .hidder.mark-top, .stopWatch .marker2.mark-top {
+      border-top-color: inherit; }
+    .stopWatch .marker.mark-left, .stopWatch .hidder.mark-left, .stopWatch .marker2.mark-left {
+      border-left-color: inherit; }
+    .stopWatch .marker.mark-bottom, .stopWatch .hidder.mark-bottom, .stopWatch .marker2.mark-bottom {
+      border-bottom-color: inherit; }
+    .stopWatch .marker.mark-right, .stopWatch .hidder.mark-right, .stopWatch .marker2.mark-right {
+      border-right-color: inherit; }
+  .stopWatch .marker {
+    border-color: lightgrey;
+    /*border-top-color: $borderColor;*/
+    /*border-top-color: inherit;*/
+    /*transform: rotate(-45deg);*/ }
+  .stopWatch .hidder {
+    border-top-color: lightgrey;
+    transform: rotate(-45deg);
+    /*        &.show-top {
+              border-top-color: $borderColor;
+            }*/ }
+  .stopWatch .countdown, .stopWatch .controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 402px;
+    height: 402px;
+    line-height: 402px;
+    font-size: 4em;
+    /*color: grey;*/
+    /*color: rgba(100,100,100,0.5);*/
+    color: rgba(100, 100, 100, 0.5);
+    text-align: center;
+    vertical-align: middle; }
+  .stopWatch .controls {
+    /*color: black;*/
+    padding: 16px 0 4px 0;
+    color: rgba(100, 100, 100, 0.5);
+    line-height: 127.33333px; }
+
+span.glyphicon, i {
+  cursor: pointer; }
+
+i#notification {
+  font-size: inherit; }
+
+.inputWrapper {
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  /*padding: $pad 0;*/
+  padding: 5px;
+  width: 70px;
+  height: 70px;
+  line-height: 20px;
+  font-size: 20px;
+  font-color: inherit;
+  margin: auto;
+  /*margin: 10px auto (0px - 40px) auto;*/
+  /*margin: 0 100px -40px 100px;*/ }
+  .inputWrapper.breakDiv {
+    background-color: #57c8d1; }
+  .inputWrapper.workDiv {
+    background-color: #5fd568; }
+  .inputWrapper label input {
+    text-align: center;
+    width: 90%;
+    height: 20px;
+    line-height: 20px;
+    background-color: inherit;
+    /*border: 1px solid white;*/
+    border: none; }
+
+input[type=number].noControl {
+  -moz-appearance: textfield; }
+  input[type=number].noControl::-webkit-inner-spin-button, input[type=number].noControl::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+
+html {
+  background-color: rgba(100, 100, 100, 0.5);
+  color: rgba(100, 100, 100, 0.5);
+  /*background-image: url(http://www.publicdomainpictures.net/pictures/30000/velka/wooden-background.jpg);*/
+  /*background-image: url(https://static.pexels.com/photos/82256/pexels-photo-82256.jpeg);*/
+  background-size: cover;
+  background-position: center center; }
+
+body {
+  background-color: transparent;
+  text-align: center; }
+
+.clickable {
+  cursor: pointer; }
+
 .mainDiv {
-  margin: auto; }
+  /*display:inline-block;*/
+  /*margin:400px auto;*/
+  margin-top: 50px; }
+
+/*.subDiv {
+  padding:20px;
+  margin:auto;
+  background-color:red;
+}*/
 
 /*# sourceMappingURL=main.css.map */

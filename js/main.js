@@ -121,7 +121,7 @@ function SoundNotifier(divId) {
     playSoundWav("sound/234524__foolboymedia__notification-up-1.wav");
   };
   this.stop = function () {
-    element.text("");
+    soundEl.text("");
   };
 }
 function TabNotifier(str, interval, times) {
@@ -314,11 +314,16 @@ function Pomodoro() {
   this.updateTimer = function () {
     timerCount = this.getCurDuration();
   };
-  this.swapTimer = function () {
-    this.updateDurations();
+  this.swapTimer = function (isForcing) {
+    isForcing = isForcing | false;
     isWorking = !isWorking;
-    this.updateTimer();
+    this.updateDurations();
+//    this.updateTimer();
     isSwapping = true;
+    if (isForcing) {
+      this.routine();
+      this.restart();
+    }
   };
   this.checkTimer = function () {
     if (timerCount <= 0) {
@@ -415,7 +420,7 @@ $(document).ready(function () {
   var pomodoro = new Pomodoro();
   $("#playPause").click(pomodoro.toggle.bind(pomodoro));
   $("#restart").click(pomodoro.restart.bind(pomodoro));
-  $("#next").click(pomodoro.swapTimer.bind(pomodoro));
+  $("#next").click(pomodoro.swapTimer.bind(pomodoro, true));
   $("#mute").click(pomodoro.toggleSound.bind(pomodoro));
   $("#notification").click(pomodoro.toggleNotification.bind(pomodoro));
   $("#workDurationPlus").click(pomodoro.inputDurationIncrement.bind(pomodoro, $("#workDuration")));

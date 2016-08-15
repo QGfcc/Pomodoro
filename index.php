@@ -40,9 +40,14 @@
   <body>
     <!--<div class="container">-->
     <div class="">
+      <h1 class="text-center">
+        Pomodoro
+      </h1>
+      <h2 class="text-center">
+        Alternate between  <span class="workEmphasis">work</span> and <span class="breakEmphasis">breaks</span> to increase you productivity
+      </h2>
       <!--//sound alert container-->
       <div id="sound"></div>
-      <!--//TODO not really centered-->
       <div class="mainDiv ">
         <!--<div class="subDiv">-->
         <!--      <div class="inputWrapper workDiv">

@@ -6,6 +6,7 @@
 /*$workBorderColor: rgba(95, 213, 104, 1);*/
 /*$breakBorderColor: rgba(87, 200, 209,1);*/
 /*$borderColor: $backgroundColor;*/
+/*$borderBackgroundColor: lightgrey;*/
 /*$borderBackgroundColor: $fontColor;*/
 /*$pomodoroFontColor : rgba(100,100,100,0.5);*/
 /*$containerBorderRadius:5px;*/
@@ -163,6 +164,26 @@ html {
 body {
   background-color: transparent;
   text-align: center; }
+
+h1 {
+  font-size: 45px;
+  color: rgba(100, 100, 100, 0.5); }
+
+h2 {
+  /*font-size: 150%;*/
+  color: rgba(100, 100, 100, 0.5);
+  margin: 0 10%; }
+
+.emphasis, .workEmphasis, .breakEmphasis {
+  text-shadow: -1px 0 rgba(100, 100, 100, 0.5), 0 1px rgba(100, 100, 100, 0.5), 1px 0 rgba(100, 100, 100, 0.5), 0 -1px rgba(100, 100, 100, 0.5);
+  font-size: 1.2em;
+  font-size: 1.4em; }
+
+.workEmphasis {
+  color: #5fd568; }
+
+.breakEmphasis {
+  color: #57c8d1; }
 
 .clickable {
   cursor: pointer; }

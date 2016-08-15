@@ -3,6 +3,7 @@
 $backgroundColor: rgba(100,100,100,0.5);
 /*$fontColor: white;*/
 $fontColor: $backgroundColor;
+$borderBackgroundColor: lightgrey;
 $workColor: rgba(95, 213, 104, 1);
 $breakColor: rgba(87, 200, 209,1);
 @import "stopwatch.scss";
@@ -17,6 +18,28 @@ html {
 body {
   background-color:transparent;
   text-align: center;
+}
+h1 {
+  font-size: 45px;
+  color: $backgroundColor;
+}
+h2 {
+  /*font-size: 150%;*/
+  color: $backgroundColor;
+  margin: 0 10%;
+}
+.emphasis {
+  text-shadow: -1px 0 $backgroundColor, 0 1px $backgroundColor, 1px 0 $backgroundColor, 0 -1px $backgroundColor;
+  font-size: 1.2em;
+  font-size: 1.4em;
+}
+.workEmphasis {
+  @extend .emphasis;
+  color: $workColor;
+}
+.breakEmphasis {
+  @extend .emphasis;
+  color: $breakColor;
 }
 .clickable {
   cursor: pointer;

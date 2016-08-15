@@ -19,8 +19,8 @@
     height: (-2*$containerBorderRadius) + $diameter;*/
   /*  width: ($containerBorderRadius) + $diameter;
     height: ($containerBorderRadius) + $diameter;*/
-  width: 402px;
-  height: 402px;
+  width: 300px;
+  height: 300px;
   border: 0px solid #5fd568;
   /*background-color:blue;*/
   border-radius: 50%;
@@ -30,7 +30,8 @@
     }*/ }
   .stopWatch, .stopWatch * {
     box-sizing: content-box;
-    padding: 0; }
+    padding: 0;
+    overflow: hidden; }
   .stopWatch.breakBorderColor {
     border-color: #57c8d1; }
   .stopWatch .marker, .stopWatch .hidder, .stopWatch .marker2 {
@@ -44,7 +45,7 @@
     /*    width: 0px;
         height: 0px;*/
     background-color: transparent;
-    border: 200px solid transparent;
+    border: 149px solid transparent;
     /*border-color:*/
     border-radius: 50%;
     transform: rotate(-45deg);
@@ -83,10 +84,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 402px;
-    height: 402px;
-    line-height: 402px;
-    font-size: 4em;
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    font-size: 3em;
     /*color: grey;*/
     /*color: rgba(100,100,100,0.5);*/
     color: rgba(100, 100, 100, 0.5);
@@ -94,12 +95,16 @@
     vertical-align: middle; }
   .stopWatch .controls {
     /*color: black;*/
-    padding: 16px 0 4px 0;
     color: rgba(100, 100, 100, 0.5);
-    line-height: 127.33333px; }
+    box-sizing: border-box;
+    padding: 0px 0 0px 0;
+    line-height: 100px; }
 
 span.glyphicon, i {
   cursor: pointer; }
+
+span.glyphicon {
+  position: static; }
 
 i#notification {
   font-size: inherit; }
@@ -107,26 +112,33 @@ i#notification {
 .inputWrapper {
   display: inline-block;
   text-align: center;
+  vertical-align: middle;
   border-radius: 50%;
+  /*border: 2px solid $controlsColor;*/
+  border: 1px solid rgba(100, 100, 100, 0.5);
   /*padding: $pad 0;*/
-  padding: 5px;
-  width: 70px;
-  height: 70px;
-  line-height: 20px;
-  font-size: 20px;
-  font-color: inherit;
+  padding: 2px;
+  width: 49px;
+  height: 49px;
+  line-height: 15px;
+  font-size: 15px;
+  color: inherit;
   margin: auto;
   /*margin: 10px auto (0px - 40px) auto;*/
-  /*margin: 0 100px -40px 100px;*/ }
+  /*margin: 0 100px -40px 100px;*/
+  /*label {*/
+  /*}*/ }
   .inputWrapper.breakDiv {
     background-color: #57c8d1; }
   .inputWrapper.workDiv {
     background-color: #5fd568; }
-  .inputWrapper label input {
+  .inputWrapper * {
+    text-align: center; }
+  .inputWrapper input {
     text-align: center;
     width: 90%;
-    height: 20px;
-    line-height: 20px;
+    height: 15px;
+    line-height: 15px;
     background-color: inherit;
     /*border: 1px solid white;*/
     border: none; }
@@ -136,6 +148,9 @@ input[type=number].noControl {
   input[type=number].noControl::-webkit-inner-spin-button, input[type=number].noControl::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0; }
+  input[type=number].noControl:hover, input[type=number].noControl:focus {
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+    /*background-color:black !important;*/ }
 
 html {
   background-color: rgba(100, 100, 100, 0.5);
@@ -155,7 +170,8 @@ body {
 .mainDiv {
   /*display:inline-block;*/
   /*margin:400px auto;*/
-  margin-top: 50px; }
+  margin-top: 50px;
+  /*margin:50px auto 0 auto;*/ }
 
 /*.subDiv {
   padding:20px;

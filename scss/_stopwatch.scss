@@ -17,7 +17,7 @@ $countdownColor: $pomodoroFontColor;
 $controlsColor: $countdownColor;
 
 
-$borderRadius: 200px;
+$borderRadius: 149px;
 $centerRadius: 1px;
 /*$containerBorderRadius:5px;*/
 $containerBorderRadius:0px;
@@ -29,6 +29,7 @@ $diameter: 2*$radius;
   &, & * {
     box-sizing: content-box;
     padding: 0;
+    overflow:hidden;
   }
   &.breakBorderColor {
     border-color: $breakBorderColor;
@@ -61,18 +62,18 @@ $diameter: 2*$radius;
     /*border-color:*/ 
     border-radius:50%;
     transform: rotate(-45deg); 
-/*    &.mark-top {
-      border-top-color: $borderColor;
-    }
-    &.mark-left {
-      border-left-color: $borderColor;
-    }
-    &.mark-bottom {
-      border-bottom-color: $borderColor;
-    }
-    &.mark-right {
-      border-right-color: $borderColor;
-    }*/
+    /*    &.mark-top {
+          border-top-color: $borderColor;
+        }
+        &.mark-left {
+          border-left-color: $borderColor;
+        }
+        &.mark-bottom {
+          border-bottom-color: $borderColor;
+        }
+        &.mark-right {
+          border-right-color: $borderColor;
+        }*/
     &.mark-top {
       border-top-color: inherit;
     }
@@ -109,7 +110,7 @@ $diameter: 2*$radius;
     width: $diameter;
     height: $diameter;
     line-height: $diameter;
-    font-size: 4em;
+    font-size: 3em;
     /*color: grey;*/
     /*color: rgba(100,100,100,0.5);*/
     color: $countdownColor;
@@ -119,14 +120,21 @@ $diameter: 2*$radius;
   .controls {
     @extend .countdown;
     /*color: black;*/
-    $pad:10px;
-    padding: ($pad + 6px) 0 ($pad - 6px) 0;
     color: $controlsColor;
+    box-sizing: border-box;
+    $pad:10px;
+    $pad:0px;
+    $offset:6px;
+    $offset:0px;
+    padding: ($pad + $offset) 0 ($pad - $offset) 0;
     line-height: ($diameter -(2*$pad))/3;
   }
 }
 span.glyphicon, i {
   cursor: pointer;
+}
+span.glyphicon {
+  position: static;
 }
 i#notification {
   font-size: inherit;
@@ -139,11 +147,20 @@ i#notification {
   &.workDiv {
     background-color: $workColor
   }
+  * {
+    text-align: center;
+    //vertical-align: middle;
+  }
   display: inline-block;
   text-align: center;
+  vertical-align: middle;
   border-radius:50%;
+  /*border: 2px solid $controlsColor;*/
+  border: 1px solid $controlsColor;
   $lineHeight:20px;
+  $lineHeight:15px;
   $pad:5px;
+  $pad:2px;
   $totHeight:(3*$lineHeight) +(2*$pad) ;
   /*padding: $pad 0;*/
   padding: $pad;
@@ -151,21 +168,21 @@ i#notification {
   height:$totHeight;
   line-height: $lineHeight;
   font-size: $lineHeight;
-  font-color:inherit;
+  color:inherit;
   margin:auto;
   /*margin: 10px auto (0px - 40px) auto;*/
   /*margin: 0 100px -40px 100px;*/
-  label {
-    input {
-      text-align: center;
-      width:90%;
-      height: $lineHeight;
-      line-height: $lineHeight;
-      background-color:inherit;
-      /*border: 1px solid white;*/
-      border: none;
-    }
+  /*label {*/
+  input {
+    text-align: center;
+    width:90%;
+    height: $lineHeight;
+    line-height: $lineHeight;
+    background-color:inherit;
+    /*border: 1px solid white;*/
+    border: none;
   }
+  /*}*/
 }
 
 input[type=number].noControl {
@@ -173,5 +190,9 @@ input[type=number].noControl {
   &::-webkit-inner-spin-button,&::-webkit-outer-spin-button {
     -webkit-appearance: none; 
     margin: 0; 
+  }
+  &:hover, &:focus {
+    box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.1);
+    /*background-color:black !important;*/
   }
 } 

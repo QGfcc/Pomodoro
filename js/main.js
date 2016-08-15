@@ -188,7 +188,11 @@ function Pomodoro() {
   var timer = undefined;
 
   var workDurationEl = $("#workDuration");
+  var workDurationPlusEl = $("#workDurationPlus");
+  var workDurationMinusEl = $("#workDurationMinus");
   var breakDurationEl = $("#breakDuration");
+  var breakDurationPlusEl = $("#breakDurationPlus");
+  var breakDurationMinusEl = $("#breakDurationMinus");
 
 
   var notifyDesktop = function (theTitle, theBody, theIcon) {
@@ -266,7 +270,7 @@ function Pomodoro() {
   };
   this.displayTimerCount = function () {
 //    $("#displayer").text(str);
-    var curDeg = this.convertToDegrees();
+    curDeg = this.convertToDegrees();
 //    if (lastDeg < curDeg) {
 //      stopWatch.reset("");
 //    }
@@ -333,6 +337,12 @@ function Pomodoro() {
     }
     this.displayTimerCount();
     this.checkTimer();
+  };
+  this.inputDurationIncrement = function (targetEl) {
+    targetEl.val(targetEl.val() - 0 + 1);// -0 convert to int
+  };
+  this.inputDurationDecrement = function (targetEl) {
+    targetEl.val(targetEl.val() - 1);
   };
   this.updateDurationsFromMili = function () {
     workDuration = workDurationEl.val();
@@ -408,4 +418,8 @@ $(document).ready(function () {
   $("#next").click(pomodoro.swapTimer.bind(pomodoro));
   $("#mute").click(pomodoro.toggleSound.bind(pomodoro));
   $("#notification").click(pomodoro.toggleNotification.bind(pomodoro));
+  $("#workDurationPlus").click(pomodoro.inputDurationIncrement.bind(pomodoro, $("#workDuration")));
+  $("#workDurationMinus").click(pomodoro.inputDurationDecrement.bind(pomodoro, $("#workDuration")));
+  $("#breakDurationPlus").click(pomodoro.inputDurationIncrement.bind(pomodoro, $("#breakDuration")));
+  $("#breakDurationMinus").click(pomodoro.inputDurationDecrement.bind(pomodoro, $("#breakDuration")));
 });

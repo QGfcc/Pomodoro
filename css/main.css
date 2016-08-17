@@ -155,7 +155,7 @@ input[type=number].noControl {
 
 html {
   background-color: rgba(100, 100, 100, 0.5);
-  color: rgba(100, 100, 100, 0.5);
+  color: rgba(100, 100, 100, 0.8);
   /*background-image: url(http://www.publicdomainpictures.net/pictures/30000/velka/wooden-background.jpg);*/
   /*background-image: url(https://static.pexels.com/photos/82256/pexels-photo-82256.jpeg);*/
   background-size: cover;
@@ -163,15 +163,16 @@ html {
 
 body {
   background-color: transparent;
-  text-align: center; }
+  text-align: center;
+  color: rgba(100, 100, 100, 0.8); }
 
 h1 {
   font-size: 45px;
-  color: rgba(100, 100, 100, 0.5); }
+  /*color: $backgroundColor;*/ }
 
 h2 {
   /*font-size: 150%;*/
-  color: rgba(100, 100, 100, 0.5);
+  /*color: $backgroundColor;*/
   margin: 0 10%; }
 
 .emphasis, .workEmphasis, .breakEmphasis {
@@ -199,5 +200,11 @@ h2 {
   margin:auto;
   background-color:red;
 }*/
+footer {
+  text-align: center;
+  margin-top: 40px; }
+  footer a {
+    text-decoration: underline;
+    color: inherit; }
 
 /*# sourceMappingURL=main.css.map */

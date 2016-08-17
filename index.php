@@ -168,5 +168,8 @@
         <!--</div>-->
       </div>
     </div>
+    <footer>
+      Coded by <a href="https://github.com/QGfcc">QG</a>
+    </footer>
   </body>
 </html>

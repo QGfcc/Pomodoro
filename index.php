@@ -44,7 +44,7 @@
         Pomodoro
       </h1>
       <h2 class="text-center">
-        Alternate between  <span class="workEmphasis">work</span> and <span class="breakEmphasis">breaks</span> to increase you productivity
+        Alternate between  <span class="workEmphasis">work</span> and <span class="breakEmphasis">breaks</span> to increase your productivity
       </h2>
       <!--//sound alert container-->
       <div id="sound"></div>
